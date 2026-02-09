@@ -36,3 +36,11 @@ Dirección	Dispositivo	¿Para qué sirve?
 
 Nota: Este kernel arranca en modo Privilege, saltándose OpenSBI mediante el flag -bios none.
 
+Para probar el código directamente en un procesador y en metal hay que tener en cuenta que se tiene pasar a binario
+esto lo hacemos con este comando
+
+~~~
+riscv64-unknown-elf-objcopy -O binary target/riscv64gc-unknown-none-elf/debug/bug-free-giggle kernel.bin
+~~~
+
+Y ese kernel final es el que se tiene que empujar al procesador para su ejecución
